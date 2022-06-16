@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Bash script that displays the content of the current directory
+#   Cut '-' and display the rest of the file name. 
+
+list=$(ls)
+for i in $list; do
+  echo "$i" | cut -d '-' -f2
+done
