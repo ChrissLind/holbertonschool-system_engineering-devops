@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
-# Script with for loop to display the text "Best School" 10 times
+# Bash script using while loop to display "Best School" 10 times
+#       on 9th iteration display "Hi"
 
-for (( i=0; i<10; i++ ))
+i=0
+
+while [ $i -le 8 ]
 do
-    if [ $i -ne 8 ]
+    if [ $i -eq 8 ]
     then
-        echo "Best School"
-    else
-	    echo "Hi"
+        echo "Hi"
     fi
+    echo "Best School"
+    ((i++))
 done
