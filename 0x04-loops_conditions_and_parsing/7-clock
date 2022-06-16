@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Bash script for displaying numbers 1-20 with case statments
+#   Cases:
+#      if the number is 4: bad luck from China
+#      if the number is 9: bad luck from Japan
+#      if the number is 17: bad luck from Italy
+
+hour=0
+
+while [ $hour -le 12 ]
+do
+    echo "Hour: $hour"
+    minute=1
+    while [ $minute -le 59 ]
+    do
+        echo $minute
+        ((minute++))
+    done
+    ((hour++))
+done
