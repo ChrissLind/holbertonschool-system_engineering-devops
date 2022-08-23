@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Installs HAProxy version 1.8
+
+apt update && sudo apt upgrade -y;
+apt-get -y install haproxy;
+sed -i "$ ENABLED=1" /etc/init.d/haproxy;
+
+printf %s "
+frontend myfrontend
+    bind *:80
+    default_backend myservers
+  
+backend myservers
+    server 4269-web01 107.21.129.118
+    server 4269-web02 3.80.186.196
+    timeout connect 5s
+    timeout server 10s
+    balance roundrobin
+    mode http" >> /etc/haproxy/haproxy.cfg;
+    service haproxy restart
