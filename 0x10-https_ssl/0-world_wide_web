@@ -8,11 +8,11 @@ answers () {
    
 if [ "$#" == 1 ]
 then
-  domain_information "$1" "www"
-  domain_information "$1" "lb-01"
-  domain_information "$1" "web-01"
-  domain_information "$1" "web-02"
+  answers "$1" "www"
+  answers "$1" "lb-01"
+  answers "$1" "web-01"
+  answers "$1" "web-02"
 elif [ "$#" == 2 ]
 then
-  domain_information "$1" "$2"
+  answers "$1" "$2"
 fi
