@@ -7,11 +7,11 @@
 }
 
 if [ "$#" == 1 ]
-then
-    answers "$1" "www"
-    answers "$1" "lb-01"
-    answers "$1" "web-01"
-    answers "$1" "web-02"
-else
-    answers "$1" "$2"
+    then
+        answers "$1" "www"
+        answers "$1" "lb-01"
+        answers "$1" "web-01"
+        answers "$1" "web-02"
+    else
+        answers "$1" "$2"
 fi
